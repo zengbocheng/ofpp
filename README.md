@@ -40,7 +40,7 @@ Class FoamMesh can parse mesh data (in ascii or binary format) and provide inqui
 - owner:  a list, the owner cell id of each face, in order of face id, read from mesh file **owner**
 - neighbour:  a list, the neighbour cell id of each face, read from mesh file **neighbour**. For faces on boudary, their neighbours are boundary's id.
 - faces: list of list, the ids of points composed the face, in order of face id, read from mesh file **faces**
-- boundary: dictionary, with key of boundary name, value of a namedtuple, `namedtuple('Boundary', 'type, num, start, neighbourPatch, id')`, in which num is face numer, start is the id of start face, neighbourPatch is the neighbour patch of cyclic boundary, id is the boundary id, equals to `-10 - index`.
+- boundary: dictionary, with key of boundary name, value of a namedtuple, `namedtuple('Boundary', 'type, num, start, neighbourPatch, id')`, in which num is face numer, start is the id of start face, neighbourPatch is the neighbour patch of cyclic boundary, id is the boundary id, equals to `-1 - index`.
 - num_point: points number
 - num_face: face number
 - num_inner_face:  inner face number
@@ -234,7 +234,7 @@ Read outside data for cell volumes, cell centers
 ```python
 >>> mesh.read_cell_volumes('0/V')
 >>> mesh.read_cell_centres('0/C')
-                       
+                     
 ```
 
 Mesh inquiry:

@@ -311,7 +311,7 @@ class FoamMesh(object):
                     if lc.strip() == b'}':
                         in_patch_field = False
                         bd[current_patch] = Boundary(current_type, current_nFaces, current_start, 
-                                                     current_neighbourPatch, -10-bid)
+                                                     current_neighbourPatch, -1-bid)
                         bid += 1
                         current_patch = b''
                         current_neighbourPatch = None
